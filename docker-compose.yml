@@ -1,0 +1,11 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+  redisinsight:
+    image: redis/redisinsight:latest
+    ports:
+      - '8001:5540'
+    depends_on:
+      - redis
